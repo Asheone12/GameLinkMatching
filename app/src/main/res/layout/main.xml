@@ -5,6 +5,14 @@
     android:layout_height="match_parent"
     android:background="@drawable/room">
 
+    <!-- 控制游戏开始的按钮,该按钮的背景图片可以根据按钮的状态改变 -->
+    <Button
+        android:id="@+id/startButton"
+        android:layout_width="140dp"
+        android:layout_height="40dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/button_selector" />
+
      <!--水平排列的LinearLayout -->
     <LinearLayout
         android:id="@+id/controlPanel"
@@ -14,12 +22,6 @@
         android:background="#1e72bb"
         android:gravity="center"
         android:orientation="horizontal">
-        <!-- 控制游戏开始的按钮,该按钮的背景图片可以根据按钮的状态改变 -->
-        <Button
-            android:id="@+id/startButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/button_selector" />
         <!-- 显示游戏剩余时间的文本框 -->
         <TextView
             android:id="@+id/timeText"

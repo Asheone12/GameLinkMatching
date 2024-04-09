@@ -126,6 +126,7 @@ public class LinkActivity extends Activity implements BaseHandlerCallBack {
             @Override
             public void onClick(View source) {
                 startGame(GameConf.DEFAULT_TIME);
+                startButton.setVisibility(View.INVISIBLE);
             }
         });
         // 为游戏区域的触碰事件绑定监听器

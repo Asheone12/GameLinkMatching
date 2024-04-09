@@ -34,9 +34,9 @@ public class GameConf {
      */
     public static int PIECE_HEIGHT;
     /**
-     * 记录游戏的总事件（100秒）.
+     * 记录游戏的总事件（200秒）.
      */
-    public static int DEFAULT_TIME = 100;
+    public static int DEFAULT_TIME = 200;
     /**
      * Piece[][]数组第一维的长度
      */
