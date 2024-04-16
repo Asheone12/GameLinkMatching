@@ -342,7 +342,7 @@ public class LinkActivity extends Activity implements BaseHandlerCallBack {
     private AlertDialog.Builder createDialog(String title, String message,
                                              int imageResource) {
         return new AlertDialog.Builder(this).setTitle(title)
-                .setMessage(message).setIcon(imageResource);
+                .setMessage(message).setIcon(imageResource).setCancelable(false);
     }
 
     /**
