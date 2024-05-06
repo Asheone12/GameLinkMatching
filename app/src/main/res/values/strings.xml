@@ -1,10 +1,10 @@
 <resources>
     <string name="app_name">连连看</string>
-    <string name="game_time">剩余时间：</string>
-    <string name="lost">Lost</string>
+    <string name="game_time">倒计时：</string>
+    <string name="lost">失败</string>
     <string name="lost_restart">游戏失败！ 重新开始</string>
     <string name="dialog_sure">确定</string>
-    <string name="success">Success</string>
+    <string name="success">胜利</string>
     <string name="success_restart">游戏胜利！ 重新开始</string>
-    <string name="remaining_time">剩余时间:%1$d</string>
+    <string name="remaining_time">倒计时:%1$d</string>
 </resources>

@@ -13,6 +13,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.muen.gamelinkmatching.board.GameService;
@@ -67,6 +68,14 @@ public class LinkActivity extends Activity implements BaseHandlerCallBack {
      */
     private Timer timer = new Timer();
     /**
+     * 底部layout
+     */
+    private LinearLayout controlPanel;
+    /**
+     * 重开按钮
+     */
+    private Button restartButton;
+    /**
      * 记录游戏的剩余时间
      */
     private int gameTime;
@@ -115,6 +124,10 @@ public class LinkActivity extends Activity implements BaseHandlerCallBack {
         timeTextView = (TextView) findViewById(R.id.timeText);
         // 获取开始按钮
         startButton = (Button) this.findViewById(R.id.startButton);
+        // 获取底部行
+        controlPanel = (LinearLayout) this.findViewById(R.id.controlPanel);
+        // 获取重开按钮
+        restartButton = (Button) this.findViewById(R.id.restartButton);
         // 获取振动器
         vibrator = (Vibrator) getSystemService(VIBRATOR_SERVICE);
         // 初始化游戏业务逻辑接口
@@ -127,6 +140,13 @@ public class LinkActivity extends Activity implements BaseHandlerCallBack {
             public void onClick(View source) {
                 startGame(GameConf.DEFAULT_TIME);
                 startButton.setVisibility(View.INVISIBLE);
+                controlPanel.setVisibility(View.VISIBLE);
+            }
+        });
+        restartButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startGame(GameConf.DEFAULT_TIME);
             }
         });
         // 为游戏区域的触碰事件绑定监听器
@@ -151,6 +171,7 @@ public class LinkActivity extends Activity implements BaseHandlerCallBack {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         startGame(GameConf.DEFAULT_TIME);
+                        controlPanel.setVisibility(View.VISIBLE);
                     }
                 });
         // 初始化游戏胜利的对话框
@@ -350,8 +371,10 @@ public class LinkActivity extends Activity implements BaseHandlerCallBack {
      */
     private void stopTimer() {
         // 停止定时器
-        this.timer.cancel();
-        this.timer = null;
+        if(this.timer != null){
+            this.timer.cancel();
+            this.timer = null;
+        }
     }
 
     @Override
@@ -368,6 +391,7 @@ public class LinkActivity extends Activity implements BaseHandlerCallBack {
                     isPlaying = false;
                     // 失败后弹出对话框
                     lostDialog.show();
+                    controlPanel.setVisibility(View.INVISIBLE);
                     return;
                 }
                 break;
