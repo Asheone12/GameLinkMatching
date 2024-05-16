@@ -117,7 +117,7 @@ public class LinkActivity extends Activity implements BaseHandlerCallBack {
         int beginImageX = SizeUtils.dp2Px(this, GameConf.BEGIN_IMAGE_X);
         int beginImageY = SizeUtils.dp2Px(this, GameConf.BEGIN_IMAGE_Y);
 
-        config = new GameConf(GameConf.PIECE_X_SUM, GameConf.PIECE_X_SUM, beginImageX, beginImageY, GameConf.DEFAULT_TIME, this);
+        config = new GameConf(GameConf.PIECE_X_SUM, GameConf.PIECE_Y_SUM, beginImageX, beginImageY, GameConf.DEFAULT_TIME, this);
         // 得到游戏区域对象
         gameView = (GameView) findViewById(R.id.gameView);
         // 获取显示剩余时间的文本框
@@ -208,11 +208,11 @@ public class LinkActivity extends Activity implements BaseHandlerCallBack {
 
 
         // 每个 方块的 宽度 等于 公共画盘的宽度 / x方向的个数
-        int tempWidth = (gameViewWidth - GameConf.BEGIN_IMAGE_X) / GameConf.PIECE_X_SUM;
+        int tempWidth = (gameViewWidth) / GameConf.PIECE_X_SUM;
         // 每个 方块的 高度 等于 公共画盘的高度 / y方向的个数
         int tempHeight = (gameViewHeight - GameConf.BEGIN_IMAGE_Y) / GameConf.PIECE_Y_SUM;
         int sideLengthOfSquare = tempWidth > tempHeight ? tempHeight : tempWidth;
-        GameConf.PIECE_WIDTH = sideLengthOfSquare;
+        GameConf.PIECE_WIDTH = tempWidth;//sideLengthOfSquare;
         // 每个 方块的 高度 等于 公共画盘的高度 / y方向的个数
         GameConf.PIECE_HEIGHT = sideLengthOfSquare;
 

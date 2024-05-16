@@ -44,7 +44,7 @@ public abstract class AbstractBoard {
             Piece piece = notNullPieces.get(i);
             piece.setPieceImage(playImages.get(i));
             // 计算每个方块左上角的X、Y座标
-            piece.setBeginX(piece.getIndexX() * imageWidth + config.getBeginImageX());
+            piece.setBeginX(piece.getIndexX() * imageWidth + imageWidth/GameConf.PIECE_X_SUM);
             piece.setBeginY(piece.getIndexY() * imageHeight + config.getBeginImageY());
             // 将该方块对象放入方块数组的相应位置处
             pieces[piece.getIndexX()][piece.getIndexY()] = piece;

@@ -11,11 +11,11 @@ public class GameConf {
     /**
      * X轴有几个方块
      */
-    public final static int PIECE_X_SUM = 8;
+    public final static int PIECE_X_SUM = 5;
     /**
      * Y轴有几个方块
      */
-    public final  static int PIECE_Y_SUM = 8;
+    public final  static int PIECE_Y_SUM = 6;
     /**
      * 从哪里开始画第一张图片出现的x座标
      */
@@ -34,9 +34,9 @@ public class GameConf {
      */
     public static int PIECE_HEIGHT;
     /**
-     * 记录游戏的总事件（200秒）.
+     * 记录游戏的总事件（150秒）.
      */
-    public static int DEFAULT_TIME = 200;
+    public static int DEFAULT_TIME = 150;
     /**
      * Piece[][]数组第一维的长度
      */

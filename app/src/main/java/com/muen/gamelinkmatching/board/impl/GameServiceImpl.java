@@ -48,14 +48,14 @@ public class GameServiceImpl implements GameService {
         int index = random.nextInt(4);
         // 随机生成AbstractBoard的子类实例
         switch (index) {
-            case 0:
-                // 0返回VerticalBoard(竖向)
-                board = new VerticalBoard();
-                break;
-            case 1:
-                // 1返回HorizontalBoard(横向)
-                board = new HorizontalBoard();
-                break;
+//            case 0:
+//                // 0返回VerticalBoard(竖向)
+//                board = new VerticalBoard();
+//                break;
+//            case 1:
+//                // 1返回HorizontalBoard(横向)
+//                board = new HorizontalBoard();
+//                break;
             default:
                 // 默认返回FullBoard
                 board = new FullBoard();
